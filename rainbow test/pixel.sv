@@ -11,6 +11,7 @@ always_ff @posedge (clk)
     if (rst) begin
         X <= 10'b0;
         Y <= 10'b0;
+        OVF <= 1'b0;
     end 
 
     else if (X == 10'h3FF) begin 
