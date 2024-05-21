@@ -2,7 +2,7 @@ module top_level(
     input  logic clk,
     input  logic enable,
     input  logic rst,
-    output logic [14:0] RGB_out
+    output logic [14:0] RGB_out,
     output logic [9:0] X,
     output logic [9:0] Y
 );

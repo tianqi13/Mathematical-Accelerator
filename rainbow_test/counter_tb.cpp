@@ -22,7 +22,7 @@ int main(int argc, char **argv, char **env)
     top->rst = 0;
 
     // run simulation for many clock cylces
-    for (i = 0; i < 3000; i++)
+    for (i = 0; i < 2100000; i++)
     {
         for (clk = 0; clk < 2; clk++)
         {
