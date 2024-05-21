@@ -3,6 +3,8 @@ module top_level(
     input  logic enable,
     input  logic rst,
     output logic [14:0] RGB_out
+    output logic [9:0] X,
+    output logic [9:0] Y
 );
 
 logic [14:0] count_out;
@@ -31,7 +33,9 @@ Addr_counter addr_counter(
     .clk(clk),
     .rst(rst),
     .en(ovf),
-    .addr_count(rd_addr)
+    .addr_count(rd_addr),
+    .X(X),
+    .Y(Y)
 );
 
 
