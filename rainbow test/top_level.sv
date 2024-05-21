@@ -31,7 +31,7 @@ Addr_counter addr_counter(
     .clk(clk),
     .rst(rst),
     .en(ovf),
-    .addr_counter(rd_addr)
+    .addr_count(rd_addr)
 );
 
 
@@ -42,7 +42,7 @@ Ram ram(
     .rd_addr(rd_addr),
     .wr_addr({y,x}),
     .din(count_out),
-    .out(RGB_out)
+    .RGB(RGB_out)
 );
 
 

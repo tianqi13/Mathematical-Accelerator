@@ -12,17 +12,19 @@ always_ff @(posedge clk)
         X <= 10'b0;
         Y <= 10'b0;
         OVF <= 1'b0;
-    end 
+    end else if (en) begin
+        if (X == 10'h3FF) begin 
+            if (Y == 10'h2FF) begin
+                OVF <= 1;
+                Y <= 10'b0;
+            end
 
-    else if (X == 10'h3FF) begin 
-        if (Y == 10'h2FF)
-            OVF <= 1;
-            Y <= 10'b0;
-    end 
-
-    else X <= X + 10'b01
-
-
+            Y <= Y + 10'b01;
+            X <= 10'b0;
+        end
+        else X <= X + 10'b01;
+    end
 
 endmodule
+
 
