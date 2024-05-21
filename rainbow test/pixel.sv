@@ -7,7 +7,7 @@ module Pixel (
     output logic [9:0] Y
 );
 
-always_ff @posedge (clk)
+always_ff @(posedge clk)
     if (rst) begin
         X <= 10'b0;
         Y <= 10'b0;
@@ -23,5 +23,7 @@ always_ff @posedge (clk)
     else 
         X <= X + 10'b01
 
-endmodule 
-    
+
+
+endmodule
+

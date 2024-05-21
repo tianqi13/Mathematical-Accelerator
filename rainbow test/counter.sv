@@ -5,7 +5,7 @@ module Counter (
     output logic [14:0] Count
 );
 
-always_ff @posedge(clk)
+always_ff @(posedge clk)
     if (rst) 
         Count <= 15'b0;
     else if (en)

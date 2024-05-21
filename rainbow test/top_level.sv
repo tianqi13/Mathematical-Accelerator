@@ -10,7 +10,7 @@ Counter counter(
     .clk(clk),
     .rst(rst),
     .en(enable),
-    .count(count_out)
+    .Count(count_out)
 );
 
 logic ovf;
