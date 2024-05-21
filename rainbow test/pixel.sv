@@ -20,8 +20,7 @@ always_ff @(posedge clk)
             Y <= 10'b0;
     end 
 
-    else 
-        X <= X + 10'b01
+    else X <= X + 10'b01
 
 
 
