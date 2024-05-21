@@ -1,4 +1,4 @@
-module ram #(
+module Ram #(
     parameter ADDRESS_WIDTH = 20,
             DATA_WIDTH = 15
 )(
