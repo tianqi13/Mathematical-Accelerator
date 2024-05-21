@@ -2,6 +2,7 @@
 #include "verilated.h"
 #include "verilated_vcd_c.h"
 #include "iostream"
+#include "fstream"
 
 int main(int argc, char **argv, char **env)
 {
@@ -16,6 +17,12 @@ int main(int argc, char **argv, char **env)
     top->trace(tfp, 99);
     tfp->open("rainbow.vcd");
 
+    std::ofstream outputFile("rgbxy_data.txt");
+    if (!outputFile.is_open()) {
+        std::cerr << "Error: Could not open file for writing." << std::endl;
+        exit(1);
+    }
+
     // initialize simulation inputs
     
     top->enable = 1;
@@ -29,6 +36,10 @@ int main(int argc, char **argv, char **env)
             tfp->dump(2 * i + clk);
             top->clk = !top->clk;
             top->eval();
+        }
+
+        if (top->RGB_out != 0){
+            outputFile << top->RGB_out << " " << top->X << " " << top->Y << std::endl;
         }
 
         // either simulation finished, or 'q' is pressed
