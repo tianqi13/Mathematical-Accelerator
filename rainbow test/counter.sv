@@ -5,6 +5,10 @@ module Counter (
 );
 
 always_ff @posedge(clk)
-    if (rst) Count 
+    if (rst) 
+        Count <= 15'b0;
+    else 
+        Count <= Count + 15'b0100;
+
 
 endmodule 
