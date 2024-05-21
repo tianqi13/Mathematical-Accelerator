@@ -8,8 +8,7 @@ module Ram #(
     input logic [ADDRESS_WIDTH-1:0] rd_addr,
     input logic [ADDRESS_WIDTH-1:0] wr_addr,
     input logic [DATA_WIDTH-1:0] din,
-    output logic [DATA_WIDTH-1:0] dout
-
+    output logic [DATA_WIDTH-1:0] RGB,
 );
 
 logic [DATA_WIDTH-1:0] ram_array [2**ADDRESS_WIDTH-1:0];
