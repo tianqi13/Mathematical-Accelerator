@@ -1,4 +1,4 @@
-module pixel (
+module Pixel (
     input logic clk, 
     input logic en, 
     input logic rst,

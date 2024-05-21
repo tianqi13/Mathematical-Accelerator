@@ -1,4 +1,4 @@
-module counter (
+module Counter (
     input logic clk,
     input logic rst,
     output logic [14:0] Count
