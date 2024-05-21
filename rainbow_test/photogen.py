@@ -5,12 +5,14 @@ def read_exported_data(filename):
     with open(filename, 'r') as file:
         for line in file:
             parts = line.split()
-            if len(parts) == 5:
-                r = int(parts[0])
-                g = int(parts[1])
-                b = int(parts[2])
-                x = int(parts[3])
-                y = int(parts[4])
+            if len(parts) == 3:
+                RGB = parts[0]
+                r = int(RGB[0:5], 2)  # 5 bits for red
+                g = int(RGB[5:10], 2) # 5 bits for green
+                b = int(RGB[10:15], 2) # 5 bits for blue
+                x = int(parts[1])
+                y = int(parts[2])
+
                 data.append((r, g, b, x, y))
     return data
 
@@ -29,9 +31,9 @@ def generate_image(data, image_width, image_height):
 # Read exported data
 data = read_exported_data('rgbxy_data.txt')
 
-# Define image resolution based on the maximum X and Y positions in your data
-image_width = max([x for _, _, _, x, _ in data]) + 1
-image_height = max([y for _, _, _, _, y in data]) + 1
+# Define image resolution based on the known maximum X and Y positions
+image_width = 1028  # Max X position is 1027, so width should be 1028
+image_height = 768  # Max Y position is 767, so height should be 768
 
 # Generate and save the image
 image = generate_image(data, image_width, image_height)

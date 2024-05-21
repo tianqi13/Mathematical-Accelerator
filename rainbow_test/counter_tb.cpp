@@ -3,6 +3,7 @@
 #include "verilated_vcd_c.h"
 #include "iostream"
 #include "fstream"
+#include "bitset"
 
 int main(int argc, char **argv, char **env)
 {
@@ -39,7 +40,8 @@ int main(int argc, char **argv, char **env)
         }
 
         if (top->RGB_out != 0){
-            outputFile << top->RGB_out << " " << top->X << " " << top->Y << std::endl;
+            std::bitset<15> rgb_binary(top->RGB_out);
+            outputFile << rgb_binary << " " << top->X << " " << top->Y << std::endl;
         }
 
         // either simulation finished, or 'q' is pressed
