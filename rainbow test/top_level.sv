@@ -1,29 +1,41 @@
 module top_level(
     input  logic clk,
+    input  logic enable,
     input  logic rst,
-    input  logic clr,
     output logic [14:0] RGB_out
 );
 
+logic [14:0] count_out;
 Counter counter(
     .clk(clk),
     .rst(rst),
-    .count()
+    .en(enable),
+    .count(count_out)
+);
+
+logic ovf;
+logic [9:0] x;
+logic [9:0] y;
+
+Pixel pixel(
+    .clk(clk), 
+    .en(enable), 
+    .rst(rst),
+    .OVF(ovf),
+    .X(x),
+    .Y(y) 
 );
 
 Ram ram(
     .clk(clk),
-    .rst(rst),
-    .WRITE_EN(),
-    .READ_EN(),
+    .WRITE_EN(~ovf),
+    .READ_EN(ovf),
     .rd_addr(),
-    .wr_addr(),
-    .din(),
-    .out()
+    .wr_addr({y,x}),
+    .din(count_out),
+    .out(RGB_out)
 );
 
-Pixel pixel(
-    
-)
+
 endmodule 
 
