@@ -15,7 +15,7 @@ always_ff @(posedge clk)
     if (rst) 
         Count <= 15'b0;
     else if (en)
-        Count <= Count + 15'b0100;
+        Count <= Count + 15'b1;
 
 
 endmodule 
