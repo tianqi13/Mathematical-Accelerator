@@ -38,7 +38,6 @@ Addr_counter addr_counter(
     .Y(Y)
 );
 
-
 Ram ram(
     .clk(clk),
     .WRITE_EN(~ovf),

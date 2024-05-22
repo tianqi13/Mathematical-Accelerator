@@ -35,10 +35,12 @@ multiplier ab(
 )
 
 logic [30:0] ab_truncated;
+always_comb begin
+    aa_minus_bb = aa - bb;
+    aa_plus_bb = aa + bb;
+    ab_truncated = ab[30:0];
+    2ab = {ab_truncated, 1'b0};
+end
 
-assign aa_minus_bb = aa - bb;
-assign aa_plus_bb = aa + bb;
-assign ab_truncated = ab[30:0];
-assign 2ab = {ab_truncated, 1'b0};
 
 endmodule
