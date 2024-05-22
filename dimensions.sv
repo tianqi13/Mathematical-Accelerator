@@ -1,3 +1,6 @@
+// Performs raster pattern
+// Overflow is only high when it is finished generating the image
+
 module dimensions(
     input logic clk, 
     input logic en, 
@@ -13,8 +16,8 @@ always_ff @(posedge clk)
         Y <= 10'b0;
         OVF <= 1'b0;
     end else if (en) begin
-        if (X == 10'h3FF) begin 
-            if (Y == 10'h2FF) begin
+        if (X == 10'h3FF) begin        //3FF = 1023
+            if (Y == 10'h2FF) begin    //2FF = 767
                 OVF <= 1;
                 Y <= 10'b0;
             end
