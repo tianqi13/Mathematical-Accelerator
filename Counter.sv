@@ -4,18 +4,38 @@
 // black if it is in the Mandelbrot set, and therefore never diverges, and red if it diverges. Any color between is purely
 // for aesthetic appeal and represents how quickly that point diverges. A true Mandelbrot set is black and white.
 
+
+
 module Counter (
-    input logic clk,
-    input logic rst,
-    input logic en,
-    output logic [14:0] Count
+  input logic clk,       // Clock input
+  input logic rst,       // Reset input (assume active high for this example)
+  input logic en,        // Enable input
+  output logic [14:0] Count,  // 15-bit counter output
+  output logic ovf    // Overflow output
 );
 
-always_ff @(posedge clk)
-    if (rst) 
-        Count <= 15'b0;
-    else if (en)
-        Count <= Count + 15'b1;
+  // 15-bit counter register
+  logic [14:0] counter_reg;
 
+  always_ff @(posedge clk or posedge rst) begin
+    if (rst) begin
+      // Reset the counter and overflow signal
+      counter_reg <= 15'd0;
+      ovf <= 1'b0;
+    end else if (en) begin
+      if (counter_reg == 15'h7FFF) begin
+        // If counter is at maximum value, set overflow and reset counter
+        counter_reg <= 15'd0;
+        ovf <= 1'b1;
+      end else begin
+        // Increment counter and clear overflow
+        counter_reg <= counter_reg + 15'd1;
+        ovf <= 1'b0;
+      end
+    end
+  end
 
-endmodule 
+  // Assign counter value to output
+  assign Count = counter_reg;
+
+endmodule
