@@ -1,7 +1,9 @@
 // This module maps the pixel coordinates (X and Y) onto the complex plane displaying the Mandelbrot visualisation.
 
 module mapper(
-    input              clk,
+    input logic clk,
+    input logic rst,
+    input logic en,
     input logic [9:0]  X,
     input logic [9:0]  Y,
     input logic [31:0] delta_x,

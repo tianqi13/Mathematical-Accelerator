@@ -1,12 +1,14 @@
 module mandelbrot_toplevel.sv(
     input logic rst,
     input logic clk,
-    input logic en,
+    input logic enable,
     input logic [9:0] x_size,
     input logic [9:0] y_size,
     input logic [31:0] re_axis_width,
     input logic [31:0] im_axis_width,
 );
+
+
 
 logic [31:0] delta_x = re_axis_width/x_size;
 logic [31:0] delta_y = im_axis_width/y_size;
