@@ -1,7 +1,6 @@
 // This module generates the necessary numbers that provide all the information about a Mandelbrot set.
 
 module generator(
-    input              clk,
     input logic [31:0] a,
     input logic [31:0] b,
     output logic [31:0] aa_minus_bb,
@@ -14,21 +13,18 @@ logic [31:0] bb;
 logic [31:0] ab;
 
 multiplier aa(
-    .clk(clk);
     .a(a);
     .b(a);
     .result(aa);
 )
 
 multiplier bb(
-    .clk(clk);
     .a(b);
     .b(b);
     .result(bb);
 )
 
 multiplier ab(
-    .clk(clk);
     .a({1'b0, X, 21'b0});
     .b(delta);
     .result(ab);
