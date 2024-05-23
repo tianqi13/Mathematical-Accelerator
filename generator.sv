@@ -25,8 +25,8 @@ multiplier b_b(
 );
 
 multiplier a_b(
-    .a({1'b0, X, 21'b0}),
-    .b(delta),  //what??
+    .a(a),
+    .b(b),
     .result(ab)
 );
 
