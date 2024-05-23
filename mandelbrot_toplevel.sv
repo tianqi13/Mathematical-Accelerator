@@ -6,6 +6,9 @@ module mandelbrot_toplevel.sv(
     input logic [9:0] y_size,
     input logic [31:0] re_axis_width,
     input logic [31:0] im_axis_width,
+    output logic [14:0] RGB_out, 
+    output logic [9:0] X,
+    output logic [9:0] Y
 );
 
 
