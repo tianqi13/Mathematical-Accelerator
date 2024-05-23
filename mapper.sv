@@ -4,7 +4,8 @@ module mapper(
     input              clk,
     input logic [9:0]  X,
     input logic [9:0]  Y,
-    input logic [31:0] delta,
+    input logic [31:0] delta_x,
+    input logic [31:0] delta_y,
     input logic [31:0] re_axis_width,
     input logic [31:0] im_axis_width,
     output logic [31:0] a,  // real coordinate
@@ -17,14 +18,14 @@ logic [31:0] YtimesDelta;
 multiplier XtimesDELTA(
     .clk(clk);
     .a({1'b0, X, 21'b0});
-    .b(delta);
+    .b(delta_x);
     .result(XtimesDelta);
 )
 
 multiplier YtimesDELTA(
     .clk(clk);
     .a({1'b0, Y, 21'b0});
-    .b(delta);
+    .b(delta_y);
     .result(YtimesDelta);
 )
 

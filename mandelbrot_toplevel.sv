@@ -8,15 +8,17 @@ module mandelbrot_toplevel.sv(
     input logic [31:0] im_axis_width,
 );
 
-logic [31:0] delta = re_axis_width/x_size;
-logic [31:0] a,  // real coordinate
-logic [31:0] b   // imag coordinate
+logic [31:0] delta_x = re_axis_width/x_size;
+logic [31:0] delta_y = im_axis_width/y_size;
+logic [31:0] a;  // real coordinate
+logic [31:0] b;  // imag coordinate
 
 mapper MAPPER (
     .clk(clk);
     .X(x_size);
     .Y(y_size);
-    .delta(delta);
+    .delta_x(delta_x);
+    .delta_y(delta_y);
     .re_axis_width(re_axis_width);
     .im_axis_width(im_axis_width);
     .a(a);  // real coordinate
