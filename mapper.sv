@@ -16,9 +16,7 @@ module mapper(
 );
 
 logic [9:0]  X,
-assign x = {1'b0, X, 21'b0};
 logic [9:0]  Y,
-assign y = {1'b0, Y, 21'b0};
 logic [31:0] XtimesDelta;
 logic [31:0] YtimesDelta;
 
@@ -45,7 +43,11 @@ multiplier YtimesDELTA(
     .result(YtimesDelta);
 )
 
-assign a = XtimesDelta + re_axis_width;
-assign b = YtimesDelta + im_axis_width;
+always_comb begin
+    x = {1'b0, X, 21'b0};
+    y = {1'b0, Y, 21'b0};
+    a = XtimesDelta + re_axis_width;
+    b = YtimesDelta + im_axis_width;
+end
 
 endmodule
