@@ -10,7 +10,7 @@ module Counter (
   input logic clk,       // Clock input
   input logic rst,       // Reset input (assume active high for this example)
   input logic en,        // Enable input
-  output logic [14:0] Count,  // 15-bit counter output
+  output logic [14:0] counter,  // 15-bit counter output
   output logic ovf    // Overflow output
 );
 
@@ -33,9 +33,8 @@ module Counter (
         ovf <= 1'b0;
       end
     end
+    counter <= counter_reg;
   end
 
-  // Assign counter value to output
-  assign Count = counter_reg;
 
 endmodule

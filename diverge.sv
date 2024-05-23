@@ -1,6 +1,6 @@
 module diverge(
     input logic [31:0] a,
-    input logc [31:0] b,
+    input logic [31:0] b,
     input logic ld,
     input logic clk,
     output logic diverged
@@ -29,7 +29,7 @@ logic [31:0] muxout2;
 always_comb begin
     s1 = a + aaminusbb;
     s2 = twoab + b;
-    if (a > 8'h00800000) 
+    if (a > 32'h00800000) 
         diverged = 1;
     else 
         diverged = 0;  
