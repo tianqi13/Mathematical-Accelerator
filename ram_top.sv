@@ -1,8 +1,8 @@
 module ram_top(
     input  logic clk,
     input  logic enable,
-    input  logic rst
-    output logic [14:0] RGB_out,
+    input  logic rst,
+    output logic [14:0] RGB_out, // (5, 5, 5)
     output logic [9:0] X,
     output logic [9:0] Y
 );
@@ -19,7 +19,7 @@ logic ovf;
 logic [9:0] x;
 logic [9:0] y;
 
-dimensions Dimensions(
+dimensions Dimensions(    // Pull X and Y coordinates (in pixels)
     .clk(clk), 
     .en(enable), 
     .rst(rst),
@@ -44,9 +44,8 @@ Ram ram(
     .READ_EN(ovf),
     .rd_addr(rd_addr),
     .wr_addr({y,x}),
-    .din(count_out),
+    .din(count_out),  // input
     .RGB(RGB_out)
 );
 
-endmodule 
-
+endmodule

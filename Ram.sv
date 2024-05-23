@@ -1,3 +1,5 @@
+// 
+
 module Ram #(
     parameter ADDRESS_WIDTH = 20,
             DATA_WIDTH = 15
@@ -12,7 +14,6 @@ module Ram #(
 );
 
 logic [DATA_WIDTH-1:0] ram_array [2**ADDRESS_WIDTH-1:0];
-
 
 always_ff @(posedge clk) begin
     if (WRITE_EN ==1'b1)
