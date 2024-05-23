@@ -35,10 +35,7 @@ always_comb begin
         diverged = 0;  
     muxout1 = ld? 32'b0 : s1;
     muxout2 = ld? 32'b0 : s2;
-
 end
-
-
 
 always_ff @(posedge clk) begin
     A <= muxout1;
