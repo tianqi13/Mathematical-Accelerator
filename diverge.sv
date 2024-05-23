@@ -38,8 +38,11 @@ always_comb begin
 
 end
 
+
+
 always_ff @(posedge clk) begin
-    
+    A <= muxout1;
+    B <= muxout2;
 end
 
 endmodule
