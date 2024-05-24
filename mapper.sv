@@ -11,8 +11,8 @@ module mapper(
     output logic [31:0] real_s,
     output logic [31:0] ims,
     output logic        ovf,
-    output logic [31:0] x,
-    output logic [31:0] y
+    output logic [9:0] x,
+    output logic [9:0] y
 );
 
 logic [9:0]  X;

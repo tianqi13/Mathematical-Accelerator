@@ -34,131 +34,136 @@ VL_ATTR_COLD void Vmandelbrot_toplevel___024root__trace_init_sub__TOP__0(Vmandel
     tracep->declBus(c+44,"Y", false,-1, 9,0);
     tracep->declBus(c+45,"Delta_x", false,-1, 31,0);
     tracep->declBus(c+46,"Delta_y", false,-1, 31,0);
-    tracep->declBus(c+3,"x_internal", false,-1, 31,0);
-    tracep->declBus(c+4,"y_internal", false,-1, 31,0);
-    tracep->declBit(c+5,"ovf", false,-1);
-    tracep->declBus(c+27,"real_internal", false,-1, 31,0);
+    tracep->declBus(c+55,"x_internal", false,-1, 9,0);
+    tracep->declBus(c+55,"y_internal", false,-1, 9,0);
+    tracep->declBit(c+1,"ovf", false,-1);
+    tracep->declBus(c+28,"real_internal", false,-1, 31,0);
     tracep->declBus(c+47,"im_internal", false,-1, 31,0);
-    tracep->declBit(c+6,"q", false,-1);
-    tracep->declBit(c+7,"q_bar", false,-1);
-    tracep->declBus(c+48,"out", false,-1, 14,0);
-    tracep->declBit(c+49,"ovf_it", false,-1);
-    tracep->declBit(c+28,"or_out", false,-1);
-    tracep->declBit(c+29,"div", false,-1);
-    tracep->declBus(c+8,"rd_addr", false,-1, 19,0);
+    tracep->declBit(c+2,"q", false,-1);
+    tracep->declBit(c+3,"q_bar", false,-1);
+    tracep->declBus(c+4,"counter_out", false,-1, 14,0);
+    tracep->declBit(c+5,"ovf_it", false,-1);
+    tracep->declBit(c+29,"or_out", false,-1);
+    tracep->declBit(c+30,"div", false,-1);
+    tracep->declBus(c+6,"rd_addr", false,-1, 19,0);
     tracep->pushNamePrefix("DIVERGE ");
-    tracep->declBus(c+27,"a", false,-1, 31,0);
+    tracep->declBus(c+28,"a", false,-1, 31,0);
     tracep->declBus(c+47,"b", false,-1, 31,0);
-    tracep->declBit(c+28,"ld", false,-1);
+    tracep->declBit(c+29,"ld", false,-1);
     tracep->declBit(c+36,"clk", false,-1);
-    tracep->declBit(c+29,"diverged", false,-1);
-    tracep->declBus(c+9,"A", false,-1, 31,0);
-    tracep->declBus(c+10,"B", false,-1, 31,0);
-    tracep->declBus(c+11,"aaplusbb", false,-1, 31,0);
-    tracep->declBus(c+12,"aaminusbb", false,-1, 31,0);
-    tracep->declBus(c+1,"twoab", false,-1, 31,0);
-    tracep->declBus(c+30,"s1", false,-1, 31,0);
-    tracep->declBus(c+31,"s2", false,-1, 31,0);
-    tracep->declBus(c+32,"muxout1", false,-1, 31,0);
-    tracep->declBus(c+33,"muxout2", false,-1, 31,0);
+    tracep->declBit(c+30,"diverged", false,-1);
+    tracep->declBus(c+7,"A", false,-1, 31,0);
+    tracep->declBus(c+8,"B", false,-1, 31,0);
+    tracep->declBus(c+9,"aaplusbb", false,-1, 31,0);
+    tracep->declBus(c+10,"aaminusbb", false,-1, 31,0);
+    tracep->declBus(c+11,"twoab", false,-1, 31,0);
+    tracep->declBus(c+31,"s1", false,-1, 31,0);
+    tracep->declBus(c+32,"s2", false,-1, 31,0);
+    tracep->declBus(c+33,"muxout1", false,-1, 31,0);
+    tracep->declBus(c+34,"muxout2", false,-1, 31,0);
     tracep->pushNamePrefix("GENERATOR ");
-    tracep->declBus(c+9,"a", false,-1, 31,0);
-    tracep->declBus(c+10,"b", false,-1, 31,0);
-    tracep->declBus(c+12,"aa_minus_bb", false,-1, 31,0);
-    tracep->declBus(c+1,"two_ab", false,-1, 31,0);
-    tracep->declBus(c+11,"aa_plus_bb", false,-1, 31,0);
-    tracep->declBus(c+13,"aa", false,-1, 31,0);
-    tracep->declBus(c+14,"bb", false,-1, 31,0);
-    tracep->declBus(c+57,"ab", false,-1, 31,0);
-    tracep->declBit(c+58,"X", false,-1);
-    tracep->declBit(c+59,"delta", false,-1);
-    tracep->declBus(c+2,"ab_truncated", false,-1, 30,0);
+    tracep->declBus(c+7,"a", false,-1, 31,0);
+    tracep->declBus(c+8,"b", false,-1, 31,0);
+    tracep->declBus(c+10,"aa_minus_bb", false,-1, 31,0);
+    tracep->declBus(c+11,"two_ab", false,-1, 31,0);
+    tracep->declBus(c+9,"aa_plus_bb", false,-1, 31,0);
+    tracep->declBus(c+12,"aa", false,-1, 31,0);
+    tracep->declBus(c+13,"bb", false,-1, 31,0);
+    tracep->declBus(c+14,"ab", false,-1, 31,0);
+    tracep->declBus(c+15,"ab_truncated", false,-1, 30,0);
     tracep->pushNamePrefix("a_a ");
-    tracep->declBus(c+60,"WIDTH", false,-1, 31,0);
-    tracep->declBus(c+9,"a", false,-1, 31,0);
-    tracep->declBus(c+9,"b", false,-1, 31,0);
-    tracep->declBus(c+13,"result", false,-1, 31,0);
-    tracep->declQuad(c+15,"intermediate", false,-1, 63,0);
+    tracep->declBus(c+56,"WIDTH", false,-1, 31,0);
+    tracep->declBus(c+7,"a", false,-1, 31,0);
+    tracep->declBus(c+7,"b", false,-1, 31,0);
+    tracep->declBus(c+12,"result", false,-1, 31,0);
+    tracep->declQuad(c+16,"intermediate", false,-1, 63,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("a_b ");
-    tracep->declBus(c+60,"WIDTH", false,-1, 31,0);
-    tracep->declBus(c+61,"a", false,-1, 31,0);
-    tracep->declBus(c+62,"b", false,-1, 31,0);
-    tracep->declBus(c+57,"result", false,-1, 31,0);
-    tracep->declQuad(c+63,"intermediate", false,-1, 63,0);
+    tracep->declBus(c+56,"WIDTH", false,-1, 31,0);
+    tracep->declBus(c+7,"a", false,-1, 31,0);
+    tracep->declBus(c+8,"b", false,-1, 31,0);
+    tracep->declBus(c+14,"result", false,-1, 31,0);
+    tracep->declQuad(c+18,"intermediate", false,-1, 63,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("b_b ");
-    tracep->declBus(c+60,"WIDTH", false,-1, 31,0);
-    tracep->declBus(c+10,"a", false,-1, 31,0);
-    tracep->declBus(c+10,"b", false,-1, 31,0);
-    tracep->declBus(c+14,"result", false,-1, 31,0);
-    tracep->declQuad(c+17,"intermediate", false,-1, 63,0);
+    tracep->declBus(c+56,"WIDTH", false,-1, 31,0);
+    tracep->declBus(c+8,"a", false,-1, 31,0);
+    tracep->declBus(c+8,"b", false,-1, 31,0);
+    tracep->declBus(c+13,"result", false,-1, 31,0);
+    tracep->declQuad(c+20,"intermediate", false,-1, 63,0);
     tracep->popNamePrefix(3);
     tracep->pushNamePrefix("Mapper ");
     tracep->declBit(c+36,"clock", false,-1);
     tracep->declBit(c+35,"rst", false,-1);
-    tracep->declBit(c+34,"en", false,-1);
+    tracep->declBit(c+48,"en", false,-1);
     tracep->declBus(c+45,"delta_x", false,-1, 31,0);
     tracep->declBus(c+46,"delta_y", false,-1, 31,0);
     tracep->declBus(c+40,"re_axis_width", false,-1, 31,0);
     tracep->declBus(c+41,"im_axis_width", false,-1, 31,0);
-    tracep->declBus(c+27,"real_s", false,-1, 31,0);
+    tracep->declBus(c+28,"real_s", false,-1, 31,0);
     tracep->declBus(c+47,"ims", false,-1, 31,0);
-    tracep->declBit(c+5,"ovf", false,-1);
-    tracep->declBus(c+3,"x", false,-1, 31,0);
-    tracep->declBus(c+4,"y", false,-1, 31,0);
-    tracep->declBus(c+19,"X", false,-1, 9,0);
-    tracep->declBus(c+20,"Y", false,-1, 9,0);
-    tracep->declBus(c+50,"XtimesDelta", false,-1, 31,0);
-    tracep->declBus(c+51,"YtimesDelta", false,-1, 31,0);
+    tracep->declBit(c+1,"ovf", false,-1);
+    tracep->declBus(c+55,"x", false,-1, 9,0);
+    tracep->declBus(c+55,"y", false,-1, 9,0);
+    tracep->declBus(c+22,"X", false,-1, 9,0);
+    tracep->declBus(c+23,"Y", false,-1, 9,0);
+    tracep->declBus(c+49,"XtimesDelta", false,-1, 31,0);
+    tracep->declBus(c+50,"YtimesDelta", false,-1, 31,0);
     tracep->pushNamePrefix("DIMENSIONS ");
     tracep->declBit(c+36,"clk", false,-1);
-    tracep->declBit(c+34,"en", false,-1);
+    tracep->declBit(c+48,"en", false,-1);
     tracep->declBit(c+35,"rst", false,-1);
-    tracep->declBit(c+5,"OVF", false,-1);
-    tracep->declBus(c+19,"X", false,-1, 9,0);
-    tracep->declBus(c+20,"Y", false,-1, 9,0);
+    tracep->declBit(c+1,"OVF", false,-1);
+    tracep->declBus(c+22,"X", false,-1, 9,0);
+    tracep->declBus(c+23,"Y", false,-1, 9,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("XtimesDELTA ");
-    tracep->declBus(c+60,"WIDTH", false,-1, 31,0);
-    tracep->declBus(c+21,"a", false,-1, 31,0);
+    tracep->declBus(c+56,"WIDTH", false,-1, 31,0);
+    tracep->declBus(c+24,"a", false,-1, 31,0);
     tracep->declBus(c+45,"b", false,-1, 31,0);
-    tracep->declBus(c+50,"result", false,-1, 31,0);
-    tracep->declQuad(c+52,"intermediate", false,-1, 63,0);
+    tracep->declBus(c+49,"result", false,-1, 31,0);
+    tracep->declQuad(c+51,"intermediate", false,-1, 63,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("YtimesDELTA ");
-    tracep->declBus(c+60,"WIDTH", false,-1, 31,0);
-    tracep->declBus(c+22,"a", false,-1, 31,0);
+    tracep->declBus(c+56,"WIDTH", false,-1, 31,0);
+    tracep->declBus(c+25,"a", false,-1, 31,0);
     tracep->declBus(c+46,"b", false,-1, 31,0);
-    tracep->declBus(c+51,"result", false,-1, 31,0);
-    tracep->declQuad(c+54,"intermediate", false,-1, 63,0);
+    tracep->declBus(c+50,"result", false,-1, 31,0);
+    tracep->declQuad(c+53,"intermediate", false,-1, 63,0);
     tracep->popNamePrefix(2);
     tracep->pushNamePrefix("addr_counter ");
     tracep->declBit(c+36,"clk", false,-1);
-    tracep->declBit(c+5,"en", false,-1);
+    tracep->declBit(c+1,"en", false,-1);
     tracep->declBit(c+35,"rst", false,-1);
-    tracep->declBus(c+8,"addr_count", false,-1, 19,0);
-    tracep->declBus(c+23,"X", false,-1, 9,0);
-    tracep->declBus(c+24,"Y", false,-1, 9,0);
+    tracep->declBus(c+6,"addr_count", false,-1, 19,0);
+    tracep->declBus(c+43,"X", false,-1, 9,0);
+    tracep->declBus(c+44,"Y", false,-1, 9,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("counter_mod ");
     tracep->declBit(c+36,"clk", false,-1);
-    tracep->declBit(c+28,"rst", false,-1);
+    tracep->declBit(c+29,"rst", false,-1);
     tracep->declBit(c+37,"en", false,-1);
-    tracep->declBus(c+48,"counter", false,-1, 14,0);
-    tracep->declBit(c+49,"ovf", false,-1);
-    tracep->declBus(c+56,"counter_reg", false,-1, 14,0);
+    tracep->declBus(c+4,"counter", false,-1, 14,0);
+    tracep->declBit(c+5,"ovf", false,-1);
+    tracep->declBus(c+26,"counter_reg", false,-1, 14,0);
     tracep->popNamePrefix(1);
     tracep->pushNamePrefix("ram ");
-    tracep->declBus(c+65,"ADDRESS_WIDTH", false,-1, 31,0);
-    tracep->declBus(c+66,"DATA_WIDTH", false,-1, 31,0);
+    tracep->declBus(c+57,"ADDRESS_WIDTH", false,-1, 31,0);
+    tracep->declBus(c+58,"DATA_WIDTH", false,-1, 31,0);
     tracep->declBit(c+36,"clk", false,-1);
-    tracep->declBit(c+25,"WRITE_EN", false,-1);
-    tracep->declBit(c+5,"READ_EN", false,-1);
-    tracep->declBus(c+8,"rd_addr", false,-1, 19,0);
-    tracep->declBus(c+26,"wr_addr", false,-1, 19,0);
-    tracep->declBus(c+48,"din", false,-1, 14,0);
+    tracep->declBit(c+27,"WRITE_EN", false,-1);
+    tracep->declBit(c+1,"READ_EN", false,-1);
+    tracep->declBus(c+6,"rd_addr", false,-1, 19,0);
+    tracep->declBus(c+59,"wr_addr", false,-1, 19,0);
+    tracep->declBus(c+4,"din", false,-1, 14,0);
     tracep->declBus(c+42,"RGB", false,-1, 14,0);
+    tracep->popNamePrefix(1);
+    tracep->pushNamePrefix("top_f ");
+    tracep->declBit(c+36,"clk", false,-1);
+    tracep->declBit(c+1,"s", false,-1);
+    tracep->declBit(c+35,"reset", false,-1);
+    tracep->declBit(c+2,"q", false,-1);
+    tracep->declBit(c+3,"q_bar", false,-1);
     tracep->popNamePrefix(2);
 }
 
@@ -202,56 +207,58 @@ VL_ATTR_COLD void Vmandelbrot_toplevel___024root__trace_full_sub_0(Vmandelbrot_t
     // Init
     uint32_t* const oldp VL_ATTR_UNUSED = bufp->oldp(vlSymsp->__Vm_baseCode);
     // Body
-    bufp->fullIData(oldp+1,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__twoab),32);
-    bufp->fullIData(oldp+2,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__ab_truncated),31);
-    bufp->fullIData(oldp+3,(vlSelf->mandelbrot_toplevel__DOT__x_internal),32);
-    bufp->fullIData(oldp+4,(vlSelf->mandelbrot_toplevel__DOT__y_internal),32);
-    bufp->fullBit(oldp+5,(vlSelf->mandelbrot_toplevel__DOT__ovf));
-    bufp->fullBit(oldp+6,(vlSelf->mandelbrot_toplevel__DOT__q));
-    bufp->fullBit(oldp+7,(vlSelf->mandelbrot_toplevel__DOT__q_bar));
-    bufp->fullIData(oldp+8,(vlSelf->mandelbrot_toplevel__DOT__rd_addr),20);
-    bufp->fullIData(oldp+9,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A),32);
-    bufp->fullIData(oldp+10,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B),32);
-    bufp->fullIData(oldp+11,(((IData)((((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
-                                        * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A))) 
-                                       >> 0x15U)) + (IData)(
-                                                            (((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B)) 
-                                                              * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B))) 
-                                                             >> 0x15U)))),32);
-    bufp->fullIData(oldp+12,(((IData)((((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
+    bufp->fullBit(oldp+1,(vlSelf->mandelbrot_toplevel__DOT__ovf));
+    bufp->fullBit(oldp+2,(vlSelf->mandelbrot_toplevel__DOT__q));
+    bufp->fullBit(oldp+3,(vlSelf->mandelbrot_toplevel__DOT__q_bar));
+    bufp->fullSData(oldp+4,(vlSelf->mandelbrot_toplevel__DOT__counter_out),15);
+    bufp->fullBit(oldp+5,(vlSelf->mandelbrot_toplevel__DOT__ovf_it));
+    bufp->fullIData(oldp+6,(vlSelf->mandelbrot_toplevel__DOT__rd_addr),20);
+    bufp->fullIData(oldp+7,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A),32);
+    bufp->fullIData(oldp+8,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B),32);
+    bufp->fullIData(oldp+9,(((IData)((((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
+                                       * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A))) 
+                                      >> 0x15U)) + (IData)(
+                                                           (((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B)) 
+                                                             * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B))) 
+                                                            >> 0x15U)))),32);
+    bufp->fullIData(oldp+10,(((IData)((((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
                                         * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A))) 
                                        >> 0x15U)) - (IData)(
                                                             (((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B)) 
                                                               * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B))) 
                                                              >> 0x15U)))),32);
-    bufp->fullIData(oldp+13,((IData)((((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
+    bufp->fullIData(oldp+11,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__twoab),32);
+    bufp->fullIData(oldp+12,((IData)((((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
                                        * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A))) 
                                       >> 0x15U))),32);
-    bufp->fullIData(oldp+14,((IData)((((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B)) 
+    bufp->fullIData(oldp+13,((IData)((((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B)) 
                                        * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B))) 
                                       >> 0x15U))),32);
-    bufp->fullQData(oldp+15,(((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
+    bufp->fullIData(oldp+14,((IData)((((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
+                                       * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B))) 
+                                      >> 0x15U))),32);
+    bufp->fullIData(oldp+15,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__ab_truncated),31);
+    bufp->fullQData(oldp+16,(((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
                               * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)))),64);
-    bufp->fullQData(oldp+17,(((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B)) 
+    bufp->fullQData(oldp+18,(((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__A)) 
                               * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B)))),64);
-    bufp->fullSData(oldp+19,(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__X),10);
-    bufp->fullSData(oldp+20,(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__Y),10);
-    bufp->fullIData(oldp+21,(((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__X) 
+    bufp->fullQData(oldp+20,(((QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B)) 
+                              * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__B)))),64);
+    bufp->fullSData(oldp+22,(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__X),10);
+    bufp->fullSData(oldp+23,(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__Y),10);
+    bufp->fullIData(oldp+24,(((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__X) 
                               << 0x15U)),32);
-    bufp->fullIData(oldp+22,(((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__Y) 
+    bufp->fullIData(oldp+25,(((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__Y) 
                               << 0x15U)),32);
-    bufp->fullSData(oldp+23,(vlSelf->mandelbrot_toplevel__DOT____Vcellout__addr_counter__X),10);
-    bufp->fullSData(oldp+24,(vlSelf->mandelbrot_toplevel__DOT____Vcellout__addr_counter__Y),10);
-    bufp->fullBit(oldp+25,((1U & (~ (IData)(vlSelf->mandelbrot_toplevel__DOT__ovf)))));
-    bufp->fullIData(oldp+26,((0xfffffU & vlSelf->mandelbrot_toplevel__DOT__x_internal)),20);
-    bufp->fullIData(oldp+27,(vlSelf->mandelbrot_toplevel__DOT__real_internal),32);
-    bufp->fullBit(oldp+28,(vlSelf->mandelbrot_toplevel__DOT__or_out));
-    bufp->fullBit(oldp+29,((0x800000U < vlSelf->mandelbrot_toplevel__DOT__real_internal)));
-    bufp->fullIData(oldp+30,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__s1),32);
-    bufp->fullIData(oldp+31,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__s2),32);
-    bufp->fullIData(oldp+32,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__muxout1),32);
-    bufp->fullIData(oldp+33,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__muxout2),32);
-    bufp->fullBit(oldp+34,(vlSelf->mandelbrot_toplevel__DOT____Vcellinp__Mapper__en));
+    bufp->fullSData(oldp+26,(vlSelf->mandelbrot_toplevel__DOT__counter_mod__DOT__counter_reg),15);
+    bufp->fullBit(oldp+27,((1U & (~ (IData)(vlSelf->mandelbrot_toplevel__DOT__ovf)))));
+    bufp->fullIData(oldp+28,(vlSelf->mandelbrot_toplevel__DOT__real_internal),32);
+    bufp->fullBit(oldp+29,(vlSelf->mandelbrot_toplevel__DOT__or_out));
+    bufp->fullBit(oldp+30,((0x800000U < vlSelf->mandelbrot_toplevel__DOT__real_internal)));
+    bufp->fullIData(oldp+31,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__s1),32);
+    bufp->fullIData(oldp+32,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__s2),32);
+    bufp->fullIData(oldp+33,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__muxout1),32);
+    bufp->fullIData(oldp+34,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__muxout2),32);
     bufp->fullBit(oldp+35,(vlSelf->rst));
     bufp->fullBit(oldp+36,(vlSelf->clk));
     bufp->fullBit(oldp+37,(vlSelf->enable));
@@ -270,41 +277,30 @@ VL_ATTR_COLD void Vmandelbrot_toplevel___024root__trace_full_sub_0(Vmandelbrot_t
                                         * (QData)((IData)(
                                                           VL_DIV_III(32, vlSelf->Im_axis_width, (IData)(vlSelf->y_size))))) 
                                        >> 0x15U)) + vlSelf->Im_axis_width)),32);
-    bufp->fullSData(oldp+48,(vlSelf->mandelbrot_toplevel__DOT__out),15);
-    bufp->fullBit(oldp+49,(vlSelf->mandelbrot_toplevel__DOT__ovf_it));
-    bufp->fullIData(oldp+50,((IData)((((QData)((IData)(
+    bufp->fullBit(oldp+48,((((IData)(vlSelf->enable) 
+                             & (IData)(vlSelf->mandelbrot_toplevel__DOT__q_bar)) 
+                            & (IData)(vlSelf->mandelbrot_toplevel__DOT__or_out))));
+    bufp->fullIData(oldp+49,((IData)((((QData)((IData)(
                                                        ((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__X) 
                                                         << 0x15U))) 
                                        * (QData)((IData)(
                                                          VL_DIV_III(32, vlSelf->Re_axis_width, (IData)(vlSelf->x_size))))) 
                                       >> 0x15U))),32);
-    bufp->fullIData(oldp+51,((IData)((((QData)((IData)(
+    bufp->fullIData(oldp+50,((IData)((((QData)((IData)(
                                                        ((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__Y) 
                                                         << 0x15U))) 
                                        * (QData)((IData)(
                                                          VL_DIV_III(32, vlSelf->Im_axis_width, (IData)(vlSelf->y_size))))) 
                                       >> 0x15U))),32);
-    bufp->fullQData(oldp+52,(((QData)((IData)(((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__X) 
+    bufp->fullQData(oldp+51,(((QData)((IData)(((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__X) 
                                                << 0x15U))) 
                               * (QData)((IData)(VL_DIV_III(32, vlSelf->Re_axis_width, (IData)(vlSelf->x_size)))))),64);
-    bufp->fullQData(oldp+54,(((QData)((IData)(((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__Y) 
+    bufp->fullQData(oldp+53,(((QData)((IData)(((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__Y) 
                                                << 0x15U))) 
                               * (QData)((IData)(VL_DIV_III(32, vlSelf->Im_axis_width, (IData)(vlSelf->y_size)))))),64);
-    bufp->fullSData(oldp+56,(vlSelf->mandelbrot_toplevel__DOT__counter_mod__DOT__counter_reg),15);
-    bufp->fullIData(oldp+57,((IData)((((QData)((IData)(
-                                                       ((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__X) 
-                                                        << 0x15U))) 
-                                       * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__delta))) 
-                                      >> 0x15U))),32);
-    bufp->fullBit(oldp+58,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__X));
-    bufp->fullBit(oldp+59,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__delta));
-    bufp->fullIData(oldp+60,(0x20U),32);
-    bufp->fullIData(oldp+61,(((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__X) 
-                              << 0x15U)),32);
-    bufp->fullIData(oldp+62,(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__delta),32);
-    bufp->fullQData(oldp+63,(((QData)((IData)(((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__X) 
-                                               << 0x15U))) 
-                              * (QData)((IData)(vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__delta)))),64);
-    bufp->fullIData(oldp+65,(0x14U),32);
-    bufp->fullIData(oldp+66,(0xfU),32);
+    bufp->fullSData(oldp+55,(0U),10);
+    bufp->fullIData(oldp+56,(0x20U),32);
+    bufp->fullIData(oldp+57,(0x14U),32);
+    bufp->fullIData(oldp+58,(0xfU),32);
+    bufp->fullIData(oldp+59,(0U),20);
 }
