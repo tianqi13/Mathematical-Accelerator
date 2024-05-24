@@ -12,7 +12,7 @@ int main(int argc, char **argv, char **env)
 
     Verilated::commandArgs(argc, argv);
 
-    Vtop_level *top = new Vmandelbrot_toplevel;
+    Vmandelbrot_toplevel *top = new Vmandelbrot_toplevel;
     Verilated::traceEverOn(true);
     VerilatedVcdC *tfp = new VerilatedVcdC;
     top->trace(tfp, 99);
@@ -28,8 +28,8 @@ int main(int argc, char **argv, char **env)
     
     top->enable = 1;
     top->rst = 1;
-    top->re_axis_width= 0xFFD00000;
-    top->im_axis_width= 0xFFC00000;
+    top->Re_axis_width= 0xFFD00000;
+    top->Im_axis_width= 0xFFC00000;
 
     // run simulation for many clock cylces
     for (i = 0; i < 30000; i++)

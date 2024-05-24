@@ -15,6 +15,7 @@ VL_INLINE_OPT void Vmandelbrot_toplevel___024root___sequent__TOP__0(Vmandelbrot_
     SData/*9:0*/ __Vdly__mandelbrot_toplevel__DOT__Mapper__DOT__Y;
     IData/*19:0*/ __Vdly__mandelbrot_toplevel__DOT__rd_addr;
     SData/*14:0*/ __Vdly__mandelbrot_toplevel__DOT__counter_mod__DOT__counter_reg;
+    IData/*19:0*/ __Vdlyvdim0__mandelbrot_toplevel__DOT__ram__DOT__ram_array__v0;
     SData/*14:0*/ __Vdlyvval__mandelbrot_toplevel__DOT__ram__DOT__ram_array__v0;
     CData/*0:0*/ __Vdlyvset__mandelbrot_toplevel__DOT__ram__DOT__ram_array__v0;
     CData/*0:0*/ __Vdly__mandelbrot_toplevel__DOT__q;
@@ -47,6 +48,9 @@ VL_INLINE_OPT void Vmandelbrot_toplevel___024root___sequent__TOP__0(Vmandelbrot_
         __Vdlyvval__mandelbrot_toplevel__DOT__ram__DOT__ram_array__v0 
             = vlSelf->mandelbrot_toplevel__DOT__counter_out;
         __Vdlyvset__mandelbrot_toplevel__DOT__ram__DOT__ram_array__v0 = 1U;
+        __Vdlyvdim0__mandelbrot_toplevel__DOT__ram__DOT__ram_array__v0 
+            = (0xfffffU & (((IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__Y) 
+                            << 0xaU) | (IData)(vlSelf->mandelbrot_toplevel__DOT__Mapper__DOT__Y)));
     }
     if (vlSelf->rst) {
         __Vdly__mandelbrot_toplevel__DOT__rd_addr = 0U;
@@ -78,7 +82,7 @@ VL_INLINE_OPT void Vmandelbrot_toplevel___024root___sequent__TOP__0(Vmandelbrot_
     }
     vlSelf->mandelbrot_toplevel__DOT__rd_addr = __Vdly__mandelbrot_toplevel__DOT__rd_addr;
     if (__Vdlyvset__mandelbrot_toplevel__DOT__ram__DOT__ram_array__v0) {
-        vlSelf->mandelbrot_toplevel__DOT__ram__DOT__ram_array[0U] 
+        vlSelf->mandelbrot_toplevel__DOT__ram__DOT__ram_array[__Vdlyvdim0__mandelbrot_toplevel__DOT__ram__DOT__ram_array__v0] 
             = __Vdlyvval__mandelbrot_toplevel__DOT__ram__DOT__ram_array__v0;
     }
     vlSelf->mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__ab_truncated 
