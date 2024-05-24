@@ -85,7 +85,6 @@ always_comb begin
     or_out = div || ovf_it;
 end
 
-
 always_ff @(posedge clk) begin
     if(or_out==1'b1)
         out <= 1'b0;
@@ -98,7 +97,5 @@ always_ff @(posedge clk) begin
         q <= ovf;
     q_bar <= ~q;
 end
-
-
 
 endmodule
