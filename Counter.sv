@@ -17,7 +17,7 @@ module Counter (
   // 15-bit counter register
   logic [14:0] counter_reg;
 
-  always_ff @(posedge clk or posedge rst) begin
+  always_ff @(posedge clk ) begin
     if (rst) begin
       // Reset the counter and overflow signal
       counter_reg <= 15'd0;

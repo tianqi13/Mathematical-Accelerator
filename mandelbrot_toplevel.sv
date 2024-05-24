@@ -13,10 +13,10 @@ module mandelbrot_toplevel(
 
 
 //mapper wires
-logic [31:0] Delta_x = Re_axis_width/x_size;
-logic [31:0] Delta_y = Im_axis_width/y_size;
-logic [31:0] x_internal;  // real coordinate
-logic [31:0] y_internal;  // imag coordinate
+logic [31:0] Delta_x = Re_axis_width/{22'b0, x_size};
+logic [31:0] Delta_y = Im_axis_width/{22'b0, y_size};
+logic [9:0] x_internal;  // real coordinate
+logic [9:0] y_internal;  // imag coordinate
 logic ovf;  //overflow due to finish image generation 
 
 logic [31:0] real_internal;
@@ -24,7 +24,7 @@ logic [31:0] im_internal;
 
 logic q;   //top flipflop output 
 logic q_bar;    //~q
-logic [14:0] out;  //out of the bottom flipflop
+logic [14:0] counter_out ;  //out of the bottom counter
 logic ovf_it; //overflow for iteration stop (size larger then 2) 
 
 logic or_out;   //output of the or gate
@@ -59,15 +59,15 @@ Addr_counter addr_counter(
     .rst(rst),
     .en(ovf),
     .addr_count(rd_addr),
-    .X(x_internal),
-    .Y(y_internal)
+    .X(X),
+    .Y(Y)
 );
 
 Counter counter_mod(
     .clk(clk),
     .rst(or_out),
     .en(enable),
-    .counter(out),
+    .counter(counter_out),
     .ovf(ovf_it)
 );
 
@@ -77,25 +77,23 @@ Ram ram(
     .READ_EN(ovf),
     .rd_addr(rd_addr),
     .wr_addr({y_internal,x_internal}),
-    .din(out),  // count_out
+    .din(counter_out),  // count_out
     .RGB(RGB_out)
 );
+
+ff_top top_f(
+    .clk(clk),
+    .s(ovf),
+    .reset(rst),
+    .q(q),
+    .q_bar(q_bar)
+);
+
 
 always_comb begin
     or_out = div || ovf_it;
 end
 
-always_ff @(posedge clk) begin
-    if(or_out==1'b1)
-        out <= 1'b0;
-    else
-        out <= enable;
-    ovf_it <= ~out;
-    if (rst)
-        q <= 1'b0;
-    else
-        q <= ovf;
-    q_bar <= ~q;
-end
+
 
 endmodule
