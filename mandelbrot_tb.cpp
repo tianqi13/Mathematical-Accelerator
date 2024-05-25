@@ -28,8 +28,10 @@ int main(int argc, char **argv, char **env)
     
     top->enable = 1;
     top->rst = 1;
-    top->Re_axis_width= 0xFFD00000;
-    top->Im_axis_width= 0xFFC00000;
+    top->Re_axis_width= 0x00800000;
+    top->Im_axis_width= 0x00600000;
+    top->x_size = 1023;
+    top->y_size = 767;
 
     // run simulation for many clock cylces
     for (i = 0; i < 30000; i++)

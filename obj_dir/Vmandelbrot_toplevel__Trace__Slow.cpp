@@ -100,12 +100,10 @@ void Vmandelbrot_toplevel::traceInitSub0(void* userp, VerilatedVcd* tracep) {
         tracep->declBit(c+2,"mandelbrot_toplevel Mapper DIMENSIONS OVF", false,-1);
         tracep->declBus(c+8,"mandelbrot_toplevel Mapper DIMENSIONS X", false,-1, 9,0);
         tracep->declBus(c+1,"mandelbrot_toplevel Mapper DIMENSIONS Y", false,-1, 9,0);
-        tracep->declBus(c+56,"mandelbrot_toplevel Mapper XtimesDELTA WIDTH", false,-1, 31,0);
         tracep->declBus(c+9,"mandelbrot_toplevel Mapper XtimesDELTA a", false,-1, 31,0);
         tracep->declBus(c+46,"mandelbrot_toplevel Mapper XtimesDELTA b", false,-1, 31,0);
         tracep->declBus(c+50,"mandelbrot_toplevel Mapper XtimesDELTA result", false,-1, 31,0);
         tracep->declQuad(c+52,"mandelbrot_toplevel Mapper XtimesDELTA intermediate", false,-1, 63,0);
-        tracep->declBus(c+56,"mandelbrot_toplevel Mapper YtimesDELTA WIDTH", false,-1, 31,0);
         tracep->declBus(c+10,"mandelbrot_toplevel Mapper YtimesDELTA a", false,-1, 31,0);
         tracep->declBus(c+47,"mandelbrot_toplevel Mapper YtimesDELTA b", false,-1, 31,0);
         tracep->declBus(c+51,"mandelbrot_toplevel Mapper YtimesDELTA result", false,-1, 31,0);
@@ -133,17 +131,14 @@ void Vmandelbrot_toplevel::traceInitSub0(void* userp, VerilatedVcd* tracep) {
         tracep->declBus(c+17,"mandelbrot_toplevel DIVERGE GENERATOR bb", false,-1, 31,0);
         tracep->declBus(c+18,"mandelbrot_toplevel DIVERGE GENERATOR ab", false,-1, 31,0);
         tracep->declBus(c+19,"mandelbrot_toplevel DIVERGE GENERATOR ab_truncated", false,-1, 30,0);
-        tracep->declBus(c+56,"mandelbrot_toplevel DIVERGE GENERATOR a_a WIDTH", false,-1, 31,0);
         tracep->declBus(c+11,"mandelbrot_toplevel DIVERGE GENERATOR a_a a", false,-1, 31,0);
         tracep->declBus(c+11,"mandelbrot_toplevel DIVERGE GENERATOR a_a b", false,-1, 31,0);
         tracep->declBus(c+16,"mandelbrot_toplevel DIVERGE GENERATOR a_a result", false,-1, 31,0);
         tracep->declQuad(c+20,"mandelbrot_toplevel DIVERGE GENERATOR a_a intermediate", false,-1, 63,0);
-        tracep->declBus(c+56,"mandelbrot_toplevel DIVERGE GENERATOR b_b WIDTH", false,-1, 31,0);
         tracep->declBus(c+12,"mandelbrot_toplevel DIVERGE GENERATOR b_b a", false,-1, 31,0);
         tracep->declBus(c+12,"mandelbrot_toplevel DIVERGE GENERATOR b_b b", false,-1, 31,0);
         tracep->declBus(c+17,"mandelbrot_toplevel DIVERGE GENERATOR b_b result", false,-1, 31,0);
         tracep->declQuad(c+22,"mandelbrot_toplevel DIVERGE GENERATOR b_b intermediate", false,-1, 63,0);
-        tracep->declBus(c+56,"mandelbrot_toplevel DIVERGE GENERATOR a_b WIDTH", false,-1, 31,0);
         tracep->declBus(c+11,"mandelbrot_toplevel DIVERGE GENERATOR a_b a", false,-1, 31,0);
         tracep->declBus(c+12,"mandelbrot_toplevel DIVERGE GENERATOR a_b b", false,-1, 31,0);
         tracep->declBus(c+18,"mandelbrot_toplevel DIVERGE GENERATOR a_b result", false,-1, 31,0);
@@ -160,8 +155,8 @@ void Vmandelbrot_toplevel::traceInitSub0(void* userp, VerilatedVcd* tracep) {
         tracep->declBus(c+5,"mandelbrot_toplevel counter_mod counter", false,-1, 14,0);
         tracep->declBit(c+6,"mandelbrot_toplevel counter_mod ovf", false,-1);
         tracep->declBus(c+26,"mandelbrot_toplevel counter_mod counter_reg", false,-1, 14,0);
-        tracep->declBus(c+57,"mandelbrot_toplevel ram ADDRESS_WIDTH", false,-1, 31,0);
-        tracep->declBus(c+58,"mandelbrot_toplevel ram DATA_WIDTH", false,-1, 31,0);
+        tracep->declBus(c+56,"mandelbrot_toplevel ram ADDRESS_WIDTH", false,-1, 31,0);
+        tracep->declBus(c+57,"mandelbrot_toplevel ram DATA_WIDTH", false,-1, 31,0);
         tracep->declBit(c+37,"mandelbrot_toplevel ram clk", false,-1);
         tracep->declBit(c+27,"mandelbrot_toplevel ram WRITE_EN", false,-1);
         tracep->declBit(c+2,"mandelbrot_toplevel ram READ_EN", false,-1);
@@ -301,8 +296,7 @@ void Vmandelbrot_toplevel::traceFullSub0(void* userp, VerilatedVcd* tracep) {
                                                      << 0x15U))) 
                                     * (QData)((IData)(
                                                       VL_DIV_III(32, vlTOPp->Im_axis_width, (IData)(vlTOPp->y_size)))))),64);
-        tracep->fullIData(oldp+56,(0x20U),32);
-        tracep->fullIData(oldp+57,(0x14U),32);
-        tracep->fullIData(oldp+58,(0xfU),32);
+        tracep->fullIData(oldp+56,(0x14U),32);
+        tracep->fullIData(oldp+57,(0xfU),32);
     }
 }

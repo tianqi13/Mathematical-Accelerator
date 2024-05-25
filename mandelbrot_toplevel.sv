@@ -89,11 +89,8 @@ ff_top top_f(
     .q_bar(q_bar)
 );
 
-
 always_comb begin
     or_out = div || ovf_it;
 end
-
-
 
 endmodule
