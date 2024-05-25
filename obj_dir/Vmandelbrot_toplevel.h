@@ -1,62 +1,85 @@
 // Verilated -*- C++ -*-
-// DESCRIPTION: Verilator output: Primary model header
+// DESCRIPTION: Verilator output: Primary design header
 //
 // This header should be included by all source files instantiating the design.
 // The class here is then constructed to instantiate the design.
 // See the Verilator manual for examples.
 
-#ifndef VERILATED_VMANDELBROT_TOPLEVEL_H_
-#define VERILATED_VMANDELBROT_TOPLEVEL_H_  // guard
+#ifndef _VMANDELBROT_TOPLEVEL_H_
+#define _VMANDELBROT_TOPLEVEL_H_  // guard
 
 #include "verilated.h"
 
+//==========
+
 class Vmandelbrot_toplevel__Syms;
-class Vmandelbrot_toplevel___024root;
-class VerilatedVcdC;
+class Vmandelbrot_toplevel_VerilatedVcd;
 
-// This class is the main interface to the Verilated model
-class Vmandelbrot_toplevel VL_NOT_FINAL : public VerilatedModel {
-  private:
-    // Symbol table holding complete model state (owned by this class)
-    Vmandelbrot_toplevel__Syms* const vlSymsp;
 
+//----------
+
+VL_MODULE(Vmandelbrot_toplevel) {
   public:
-
+    
     // PORTS
     // The application code writes and reads these signals to
     // propagate new values into/out from the Verilated model.
-    VL_IN8(&clk,0,0);
-    VL_IN8(&rst,0,0);
-    VL_IN8(&enable,0,0);
-    VL_IN16(&x_size,9,0);
-    VL_IN16(&y_size,9,0);
-    VL_OUT16(&RGB_out,14,0);
-    VL_OUT16(&X,9,0);
-    VL_OUT16(&Y,9,0);
-    VL_IN(&Re_axis_width,31,0);
-    VL_IN(&Im_axis_width,31,0);
-
-    // CELLS
-    // Public to allow access to /* verilator public */ items.
-    // Otherwise the application code can consider these internals.
-
-    // Root instance pointer to allow access to model internals,
-    // including inlined /* verilator public_flat_* */ items.
-    Vmandelbrot_toplevel___024root* const rootp;
-
+    VL_IN8(clk,0,0);
+    VL_IN8(rst,0,0);
+    VL_IN8(enable,0,0);
+    VL_IN16(x_size,9,0);
+    VL_IN16(y_size,9,0);
+    VL_OUT16(RGB_out,14,0);
+    VL_OUT16(X,9,0);
+    VL_OUT16(Y,9,0);
+    VL_IN(Re_axis_width,31,0);
+    VL_IN(Im_axis_width,31,0);
+    
+    // LOCAL SIGNALS
+    // Internals; generally not touched by application code
+    CData/*0:0*/ mandelbrot_toplevel__DOT__ovf;
+    CData/*0:0*/ mandelbrot_toplevel__DOT__q;
+    CData/*0:0*/ mandelbrot_toplevel__DOT__q_bar;
+    CData/*0:0*/ mandelbrot_toplevel__DOT__ovf_it;
+    CData/*0:0*/ mandelbrot_toplevel__DOT__or_out;
+    SData/*14:0*/ mandelbrot_toplevel__DOT__counter_out;
+    SData/*9:0*/ mandelbrot_toplevel__DOT__Mapper__DOT__X;
+    SData/*9:0*/ mandelbrot_toplevel__DOT__Mapper__DOT__Y;
+    SData/*14:0*/ mandelbrot_toplevel__DOT__counter_mod__DOT__counter_reg;
+    IData/*31:0*/ mandelbrot_toplevel__DOT__real_internal;
+    IData/*19:0*/ mandelbrot_toplevel__DOT__rd_addr;
+    IData/*31:0*/ mandelbrot_toplevel__DOT__DIVERGE__DOT__A;
+    IData/*31:0*/ mandelbrot_toplevel__DOT__DIVERGE__DOT__B;
+    IData/*31:0*/ mandelbrot_toplevel__DOT__DIVERGE__DOT__twoab;
+    IData/*31:0*/ mandelbrot_toplevel__DOT__DIVERGE__DOT__s1;
+    IData/*31:0*/ mandelbrot_toplevel__DOT__DIVERGE__DOT__s2;
+    IData/*31:0*/ mandelbrot_toplevel__DOT__DIVERGE__DOT__muxout1;
+    IData/*31:0*/ mandelbrot_toplevel__DOT__DIVERGE__DOT__muxout2;
+    IData/*30:0*/ mandelbrot_toplevel__DOT__DIVERGE__DOT__GENERATOR__DOT__ab_truncated;
+    SData/*14:0*/ mandelbrot_toplevel__DOT__ram__DOT__ram_array[1048576];
+    
+    // LOCAL VARIABLES
+    // Internals; generally not touched by application code
+    CData/*0:0*/ __Vclklast__TOP__clk;
+    CData/*0:0*/ __Vm_traceActivity[3];
+    
+    // INTERNAL VARIABLES
+    // Internals; generally not touched by application code
+    Vmandelbrot_toplevel__Syms* __VlSymsp;  // Symbol table
+    
     // CONSTRUCTORS
-    /// Construct the model; called by application code
-    /// If contextp is null, then the model will use the default global context
-    /// If name is "", then makes a wrapper with a
-    /// single model invisible with respect to DPI scope names.
-    explicit Vmandelbrot_toplevel(VerilatedContext* contextp, const char* name = "TOP");
-    explicit Vmandelbrot_toplevel(const char* name = "TOP");
-    /// Destroy the model; called (often implicitly) by application code
-    virtual ~Vmandelbrot_toplevel();
   private:
     VL_UNCOPYABLE(Vmandelbrot_toplevel);  ///< Copying not allowed
-
   public:
+    /// Construct the model; called by application code
+    /// The special name  may be used to make a wrapper with a
+    /// single model invisible with respect to DPI scope names.
+    Vmandelbrot_toplevel(const char* name = "TOP");
+    /// Destroy the model; called (often implicitly) by application code
+    ~Vmandelbrot_toplevel();
+    /// Trace signals in the model; called by application code
+    void trace(VerilatedVcdC* tfp, int levels, int options = 0);
+    
     // API METHODS
     /// Evaluate the model.  Application must call when inputs change.
     void eval() { eval_step(); }
@@ -67,16 +90,43 @@ class Vmandelbrot_toplevel VL_NOT_FINAL : public VerilatedModel {
     void eval_end_step() {}
     /// Simulation complete, run final blocks.  Application must call on completion.
     void final();
-    /// Trace signals in the model; called by application code
-    void trace(VerilatedVcdC* tfp, int levels, int options = 0);
-    /// Retrieve name of this model instance (as passed to constructor).
-    const char* name() const;
-
-    // Abstract methods from VerilatedModel
-    const char* hierName() const override final;
-    const char* modelName() const override final;
-    unsigned threads() const override final;
-    std::unique_ptr<VerilatedTraceConfig> traceConfig() const override final;
+    
+    // INTERNAL METHODS
+  private:
+    static void _eval_initial_loop(Vmandelbrot_toplevel__Syms* __restrict vlSymsp);
+  public:
+    void __Vconfigure(Vmandelbrot_toplevel__Syms* symsp, bool first);
+  private:
+    static QData _change_request(Vmandelbrot_toplevel__Syms* __restrict vlSymsp);
+    static QData _change_request_1(Vmandelbrot_toplevel__Syms* __restrict vlSymsp);
+  public:
+    static void _combo__TOP__3(Vmandelbrot_toplevel__Syms* __restrict vlSymsp);
+  private:
+    void _ctor_var_reset() VL_ATTR_COLD;
+  public:
+    static void _eval(Vmandelbrot_toplevel__Syms* __restrict vlSymsp);
+  private:
+#ifdef VL_DEBUG
+    void _eval_debug_assertions();
+#endif  // VL_DEBUG
+  public:
+    static void _eval_initial(Vmandelbrot_toplevel__Syms* __restrict vlSymsp) VL_ATTR_COLD;
+    static void _eval_settle(Vmandelbrot_toplevel__Syms* __restrict vlSymsp) VL_ATTR_COLD;
+    static void _sequent__TOP__1(Vmandelbrot_toplevel__Syms* __restrict vlSymsp);
+    static void _settle__TOP__2(Vmandelbrot_toplevel__Syms* __restrict vlSymsp) VL_ATTR_COLD;
+  private:
+    static void traceChgSub0(void* userp, VerilatedVcd* tracep);
+    static void traceChgTop0(void* userp, VerilatedVcd* tracep);
+    static void traceCleanup(void* userp, VerilatedVcd* /*unused*/);
+    static void traceFullSub0(void* userp, VerilatedVcd* tracep) VL_ATTR_COLD;
+    static void traceFullTop0(void* userp, VerilatedVcd* tracep) VL_ATTR_COLD;
+    static void traceInitSub0(void* userp, VerilatedVcd* tracep) VL_ATTR_COLD;
+    static void traceInitTop(void* userp, VerilatedVcd* tracep) VL_ATTR_COLD;
+    void traceRegister(VerilatedVcd* tracep) VL_ATTR_COLD;
+    static void traceInit(void* userp, VerilatedVcd* tracep, uint32_t code) VL_ATTR_COLD;
 } VL_ATTR_ALIGNED(VL_CACHE_LINE_BYTES);
+
+//----------
+
 
 #endif  // guard
