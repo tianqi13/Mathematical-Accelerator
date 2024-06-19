@@ -1,0 +1,7 @@
+# Exclude all .vcd files and text for rgbtop
+*.vcd
+*.txt
+*.png
+# Exclude all files in obj_dir directory
+obj_dir/
+

@@ -22,14 +22,12 @@ The project aim was to display a visualisation of a mathematical function that i
 
 To accelerate computational throughput, we implemented our calculations on a PYNQ-Z1 FPGA. We developed several versions of this Mandelbrot Generator, from Single Cycle to Parallel and finally Pipelined implementation. Our most efficient version generated an image 600 times faster than a C++ script. 
 
-
 We further developed the user interface, integrating functions such as scrolling, zooming in and out, as well as Julia Sets. 
-
 
 ### Version Control 
 The 3 versions are: 
 1. [Single Cycle]
-2. [Parallel_4]
+2. [Parallel 4]
 3. [Pipelined] 
 
 All versions contain a different mandelbrot_toplevel.v module. This module outputs the 24 bit RGB values of a Mandelbrot frame in a raster order. These RGB values are fed into packer.v, which packs 4 of these RGB values into 3 32 bit values and is output to downstream logic. Essentially, the mandelbrot_toplevel.module along with packer.v are instantiated in the top level module pixel_generator.v. 
@@ -51,13 +49,46 @@ Now, run the 4to3converter.py script. This python script contains a state machin
 
 Finally, run the photogen.py script. This python script reads each line in the .txt file and produces a .png image. You can now view the result of the simulation -- you should see that a Mandelbrot is generated!
 
+The exact prodedure for this varies between the versions. Please use the commands below for the respective version.
+
+Single Cycle:
+
+    ->
+    iverilog -o stream  pixgen_tb.v packer.v pixel_generator.v mandelbrot_toplevel.v mapper.v Counter_iteration.v dimensions.v ff_div.v  multiplier.v state_m.v diverge.v generator.v
+    ->
+    vvp stream
+    ->
+    python3 4to3converter.py
+    ->
+    python3 test.py
+
+
+Parallel 4:
+
+
+
+
+Pipelined:
+
+    ->
+    iverilog -o stream second_add_clocked.v rgb_reg.v pixgen_tb.v pixel_generator.v packer.v mux_state.v multiplier.v multiplier_clocked.v mapper.v mandelbrot_toplevel.v ff_div.v dimensions.v Counter_iteration.v colormapper.v black_hole.v add_clocked.v
+    ->
+    vvp stream
+    ->
+    python3 4to3converter.py
+    ->
+    python3 new_test.py
+
+
+    Change 'assign juliavmandelbrot = 1'b0;' to 'assign juliavmandelbrot = 1'b1;' to generate Julia sets
+
 
 ### Bitstream and Hardware Handoff files 
 You will find the generated .bit and .hwh files for each version in the corresponding branches. To run these files on the Jupyter notebook, download these files onto your computer. 
 
 Connect your PYNQ-Z1 boards to your computer. The default IP address of the PYNQ board is 192.168.2.99. Open File Explorer on your computer and go to the Network folder. In the search bar, key in "//192.168.2.99". This should take you to an interface with a folder named Xillinx. Open this folder and drag the .bit and .hwh file into this folder. Make sure to rename both files to the same name. 
 
-Now, open the board's Jupyter Notebook by typing the board's IP address in the search bar of a Search Engine such as Google. If the board is connected properly, a Jupyter Notebook should generate and ask for a password. The default password is xilinx. 
+Now, open the board's Jupyter Notebook by typing the board's IP address in the search bar of a Search Engine such as Google. If the board is connected properly, a Jupyter Notebook should generate and ask for a password. The default username and password is xilinx. 
 
-Upload the 
+With the Pynq board plugged in to your computer, open the Network directory in Files. Then in the path command bar, type \\192.168.2.99 and upload the bitstream and hardware handoff files to the xilinx folder. Now you can run the Hardware Image Generation script on the notebook with the files you uploaded to the xilinx folder.
 
