@@ -253,7 +253,6 @@ colormapper colormapping0 (
     .y(G),
     .COLOR2(COLOR2_CUSTOM),
     .color_case(color_case_0),
-    .gradient_mode(1'b1),
     .r_mapped(R_internal), 
     .g_mapped(G_internal), 
     .b_mapped(B_internal)
