@@ -63,11 +63,6 @@ Single Cycle:
     python3 test.py
 
 
-Parallel 4:
-
-
-
-
 Pipelined:
 
     ->
