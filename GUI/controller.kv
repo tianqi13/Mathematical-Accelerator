@@ -1,0 +1,100 @@
+<ControllerGUI>:
+    orientation: 'horizontal'
+    padding: 10
+    spacing: 10
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1  # White color
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_x: 0.5
+
+        BoxLayout:
+            size_hint_y: 0.3
+            orientation: 'horizontal'
+            spacing: 20
+            Button:
+                text: "Select Color 1"
+                size_hint: (0.3, 1)
+                on_release: root.open_color_picker('selected_color_1')
+                background_color: root.selected_color_1
+            Button:
+                text: "Select Color 2"
+                size_hint: (0.3, 1)
+                on_release: root.open_color_picker('selected_color_2')
+                background_color: root.selected_color_2
+            Button:
+                text: "Select Color 3"
+                size_hint: (0.3, 1)
+                on_release: root.open_color_picker('selected_color_3')
+                background_color: root.selected_color_3
+
+        BoxLayout:
+            size_hint_y: 0.1
+            orientation: 'horizontal'
+            spacing: 20
+            BoxLayout:
+                size_hint: (0.3, 1)
+                canvas.before:
+                    Color:
+                        rgba: root.selected_color_1
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+            BoxLayout:
+                size_hint: (0.3, 1)
+                canvas.before:
+                    Color:
+                        rgba: root.selected_color_2
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+            BoxLayout:
+                size_hint: (0.3, 1)
+                canvas.before:
+                    Color:
+                        rgba: root.selected_color_3
+                    Rectangle:
+                        size: self.size
+                        pos: self.pos
+
+        Label:
+            text: "Adjust Control 1"
+            size_hint_y: 0.1
+        Slider:
+            min: 0
+            max: 100
+            value: 50
+            size_hint_y: 0.2
+            id: slider1
+
+        Label:
+            text: "Adjust Control 2"
+            size_hint_y: 0.1
+        Slider:
+            min: 0
+            max: 100
+            value: 50
+            size_hint_y: 0.2
+            id: slider2
+
+        Label:
+            text: "Adjust Control 3"
+            size_hint_y: 0.1
+        Slider:
+            min: 0
+            max: 100
+            value: 50
+            size_hint_y: 0.2
+            id: slider3
+
+    BoxLayout:
+        size_hint_x: 0.5
+        Image:
+            source: 'controller.jpg'
+            allow_stretch: True
+            keep_ratio: True

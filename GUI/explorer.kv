@@ -1,0 +1,225 @@
+<FractalScreenManager>:
+    orientation: 'vertical'
+    MainMenuScreen:
+        id: main_menu_screen
+    MandelbrotScreen:
+        id: mandelbrot_screen
+        opacity: 0
+        disabled: True
+    JuliaScreen:
+        id: julia_screen
+        opacity: 0
+        disabled: True
+
+<MainMenuScreen@BoxLayout>:
+    orientation: 'vertical'
+    spacing: 10
+    padding: 20
+    Button:
+        text: 'Explore Mandelbrot Set'
+        font_size: 24
+        size_hint: 1, 0.2
+        on_release: root.show_mandelbrot_screen()
+    Button:
+        text: 'Explore Julia Set'
+        font_size: 24
+        size_hint: 1, 0.2
+        on_release: root.show_julia_screen()
+    Button:
+        text: 'Settings and Controls'
+        font_size: 24
+        size_hint: 1, 0.2
+    Button:
+        text: 'About the Team'
+        font_size: 24
+        size_hint: 1, 0.2
+
+<MandelbrotScreen@BoxLayout>:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, 0.1
+        Label:
+            text: 'Mandelbrot Set'
+            font_size: 32
+            halign: 'center'
+            valign: 'middle'
+            size_hint: None, None
+            size: self.texture_size
+    GridLayout:
+        cols: 3
+        spacing: 10
+        padding: 20
+        size_hint: 1, 0.8
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+            Label:
+                text: 'Colour'
+                font_size: 24
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+            Button:
+                text: 'Preset1'
+                font_size: 18
+            Button:
+                text: 'Preset2'
+                font_size: 18
+            Button:
+                text: 'Preset3'
+                font_size: 18
+            Button:
+                text: 'Preset4'
+                font_size: 18
+            Button:
+                text: 'Preset5'
+                font_size: 18
+            Button:
+                text: 'Preset6'
+                font_size: 18
+            Button:
+                text: 'Personalised Colour'
+                font_size: 18
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+            Label:
+                text: 'Movement and Zoom'
+                font_size: 24
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+            Slider:
+                min: 1
+                max: 100
+                value: 50
+                on_value: root.update_zoom_value(self, self.value)
+            Label:
+                id: zoom_value_label
+                text: 'Zoom Value: 50'
+                font_size: 18
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+            Label:
+                id: coordinates_label
+                text: 'Coordinates: (0, 0)'
+                font_size: 18
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+            Label:
+                text: 'Image Placeholder for Movement Explanation'
+                font_size: 18
+                size_hint_y: None
+                height: self.texture_size[1] * 4
+            Button:
+                text: 'Activate Movement'
+                font_size: 18
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+            Label:
+                text: 'Other Parameters'
+                font_size: 24
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+    Button:
+        text: 'Back'
+        font_size: 24
+        size_hint_y: 0.1
+        on_release: root.show_main_menu()
+
+<JuliaScreen@BoxLayout>:
+    orientation: 'vertical'
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint: 1, 0.1
+        Label:
+            text: 'Julia Set'
+            font_size: 32
+            halign: 'center'
+            valign: 'middle'
+            size_hint: None, None
+            size: self.texture_size
+    GridLayout:
+        cols: 3
+        spacing: 10
+        padding: 20
+        size_hint: 1, 0.8
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+            Label:
+                text: 'Colour'
+                font_size: 24
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+            Button:
+                text: 'Preset1'
+                font_size: 18
+            Button:
+                text: 'Preset2'
+                font_size: 18
+            Button:
+                text: 'Preset3'
+                font_size: 18
+            Button:
+                text: 'Preset4'
+                font_size: 18
+            Button:
+                text: 'Preset5'
+                font_size: 18
+            Button:
+                text: 'Preset6'
+                font_size: 18
+            Button:
+                text: 'Personalised Colour'
+                font_size: 18
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+            Label:
+                text: 'Movement and Zoom'
+                font_size: 24
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+            Slider:
+                min: 1
+                max: 100
+                value: 50
+                on_value: root.update_zoom_value_julia(self, self.value)
+            Label:
+                id: zoom_value_label_julia
+                text: 'Zoom Value: 50'
+                font_size: 18
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+            Label:
+                id: coordinates_label_julia
+                text: 'Coordinates: (0, 0)'
+                font_size: 18
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+            Label:
+                text: 'Image Placeholder for Movement Explanation'
+                font_size: 18
+                size_hint_y: None
+                height: self.texture_size[1] * 4
+            Button:
+                text: 'Activate Movement'
+                font_size: 18
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: 1, 1
+            Label:
+                text: 'Other Parameters'
+                font_size: 24
+                size_hint_y: None
+                height: self.texture_size[1] * 2
+    Button:
+        text: 'Back'
+        font_size: 24
+        size_hint_y: 0.1
+        on_release: root.show_main_menu()
