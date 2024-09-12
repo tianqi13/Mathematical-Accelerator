@@ -24,6 +24,12 @@ To accelerate computational throughput, we implemented our calculations on a PYN
 
 We further developed the user interface, integrating functions such as scrolling, zooming in and out, as well as Julia Sets. 
 
+![Mandelbrot Set](Images/MandelBrot.png)
+![Julia Set](Images/output_image1.png)
+![Julia Set](Images/output_image2.png)
+![Julia Set](Images/output_image3.png)
+![Julia Set](Images/output_image4.png)
+
 ### Version Control 
 The 3 versions are: 
 1. [Single Cycle]
