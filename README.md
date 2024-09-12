@@ -1,5 +1,7 @@
 # ELEC50015 - Electronics Design Project 2
 
+![Julia Set](Images/output_image2.png)
+
 This repository contains the files used to generate a Mandelbrot and Julia Sets on a PYNQ-Z1 FPGA board, done as part of our Y2 Electronics Design Project at Imperial College London. 
 
 ### Overview
@@ -26,7 +28,6 @@ We further developed the user interface, integrating functions such as scrolling
 
 ![Mandelbrot Set](Images/MandelBrot.png)
 ![Julia Set](Images/output_image1.png)
-![Julia Set](Images/output_image2.png)
 ![Julia Set](Images/output_image3.png)
 ![Julia Set](Images/output_image4.png)
 
